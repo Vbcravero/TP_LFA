@@ -50,7 +50,7 @@ def normalizar(nodo_funcion):
 if __name__ == "__main__":
     from extraccion import extraer_funciones
 
-    for fn in extraer_funciones("ejemplos"):
+    for fn in extraer_funciones("Ejemplos"):
         arbol = normalizar(fn.nodo)
         ast.fix_missing_locations(arbol)
         print(f"--- {fn.nombre} ---")

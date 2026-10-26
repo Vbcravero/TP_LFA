@@ -94,7 +94,7 @@ def buscar_similares(objetivo, candidatas, top_k=5, metrica="jaccard"):
 if __name__ == "__main__":
     from extraccion import extraer_funciones
 
-    funciones = extraer_funciones("ejemplos")
+    funciones = extraer_funciones("Ejemplos")
     objetivo = next(f for f in funciones if f.nombre == "suma_lista")
 
     for metrica, (_, umbral) in METRICAS.items():

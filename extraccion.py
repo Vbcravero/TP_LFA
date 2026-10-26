@@ -48,5 +48,5 @@ def _extraer_de_archivo(ruta):
 
 
 if __name__ == "__main__":
-    for fn in extraer_funciones("ejemplos"):
+    for fn in extraer_funciones("Ejemplos"):
         print(f"{fn.archivo}:{fn.nombre} (línea {fn.linea})")
