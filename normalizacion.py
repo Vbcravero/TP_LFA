@@ -1,5 +1,8 @@
 import ast
 import copy
+import builtins
+
+BUILTINS = set(dir(builtins))
 
 
 class Normalizador(ast.NodeTransformer):
@@ -13,6 +16,11 @@ class Normalizador(ast.NodeTransformer):
 
     def visit_FunctionDef(self, nodo):
         nodo.name = "FUNC"  # el nombre de la función no debe influir
+        # quitar el docstring (primera sentencia que es un string suelto)
+        if (nodo.body and isinstance(nodo.body[0], ast.Expr)
+                and isinstance(nodo.body[0].value, ast.Constant)
+                and isinstance(nodo.body[0].value.value, str)):
+            nodo.body = nodo.body[1:] or [ast.Pass()]
         self.generic_visit(nodo)
         return nodo
 
@@ -24,7 +32,8 @@ class Normalizador(ast.NodeTransformer):
         return nodo
 
     def visit_Name(self, nodo):
-        nodo.id = self._token(nodo.id)
+        if nodo.id not in BUILTINS:   # print, len, range, sum... se conservan
+            nodo.id = self._token(nodo.id)
         return nodo
 
     def visit_Constant(self, nodo):
