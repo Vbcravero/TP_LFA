@@ -131,7 +131,7 @@ el informe.
 
 ## Informe
 
-[Informe del TP](informe.pdf) — decisiones de diseño, métrica elegida y por qué, 
+[Informe del TP](Informe.pdf) — decisiones de diseño, métrica elegida y por qué, 
 validación con precisión y recall, limitaciones y mejoras posibles.
 
 ## Integrantes
