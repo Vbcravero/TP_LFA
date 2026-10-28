@@ -129,9 +129,10 @@ el informe.
 
 ## Informe
 
-`Informe TP Motor de búsqueda de funciones similares vía AST.docx` — decisiones de
-diseño, métrica elegida y por qué, validación con precisión y recall, limitaciones y
-mejoras posibles.
+## Informe
+
+[Informe del TP](informe.pdf) — decisiones de diseño, métrica elegida y por qué, 
+validación con precisión y recall, limitaciones y mejoras posibles.
 
 ## Integrantes
 
